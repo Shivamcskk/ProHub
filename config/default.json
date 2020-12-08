@@ -1,0 +1,6 @@
+{
+  "jwtsecret":"mysecrettoken69",
+    "mongoURI":"mongodb+srv://SCOTT:India1947@cluster0.dizvw.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
+
+
