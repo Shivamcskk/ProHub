@@ -2,6 +2,7 @@ import React,{Fragment,useState} from 'react'
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setAlert} from '../../actions/alert'
+import {register} from '../../actions/auth'
 import PropTypes from 'prop-types'
 
  function Register (props)  {
@@ -25,7 +26,7 @@ import PropTypes from 'prop-types'
            }
            else
            {
-               console.log('success')
+              props.register({name,email,password})
             }
      }
     return (
@@ -37,7 +38,7 @@ import PropTypes from 'prop-types'
       <p className="lead" style={{textAlign:"center",color:"green"}}><i className="fas fa-comment-alt"></i> Create Your Account</p>
       <form className="form" style={{width:"50%",alignContent:"center",margin:"0 auto"}} onSubmit={onSubmit}>
         <div className="form-group">
-          <input type="text" placeholder="Name" name="name" value={FormData.name} onChange={e=>onChange(e)} required />
+          <input type="text" placeholder="Name" name="name" value={FormData.name} onChange={e=>onChange(e)}  />
         </div>
         <div className="form-group">
           <input type="email" placeholder="Email Address" name="email" value={FormData.email} onChange={e=>onChange(e)} />
@@ -48,7 +49,7 @@ import PropTypes from 'prop-types'
             type="password"
             placeholder="Password"
             name="password"
-            minLength="6"
+            
             value={FormData.password} onChange={e=>onChange(e)}
           />
         </div>
@@ -57,7 +58,7 @@ import PropTypes from 'prop-types'
             type="password"
             placeholder="Confirm Password"
             name="password2"
-            minLength="6"
+          
             value={FormData.password2} onChange={e=>onChange(e)}
           />
         </div>
@@ -73,6 +74,7 @@ import PropTypes from 'prop-types'
     )
 }
 Register.prototype={
-  setAlert:PropTypes.func.isRequired
+  setAlert:PropTypes.func.isRequired,
+  register:PropTypes.func.isRequired,
 }
-export default connect(null,{setAlert})(Register);
+export default connect(null,{setAlert,register})(Register);
