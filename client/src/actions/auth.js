@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import {setAlert, SetAlert} from './alert';
-import {REGISTER_FAIL,REGISTER_SUCCESS,USER_LOADED,AUTH_ERROR,LOGIN_SUCCESS,LOGIN_FAIL,LOGOUT} from '../actions/types';
+import {REGISTER_FAIL,REGISTER_SUCCESS,USER_LOADED,AUTH_ERROR,LOGIN_SUCCESS,LOGIN_FAIL,LOGOUT,CLEAR_PROFILE} from '../actions/types';
 import setAuthToken from '../utils/setAuthToken'
 
 export const loaduser=()=>async dispatch=>{
@@ -83,5 +83,6 @@ export const login =({email,password})=>async dispatch =>{
     }
 }
 export const logout=()=> dispatch=>{
+    dispatch({type:CLEAR_PROFILE})
     dispatch({type:LOGOUT})
 }

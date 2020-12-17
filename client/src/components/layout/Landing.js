@@ -1,6 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-function Landing() {
+import {Link,Redirect} from 'react-router-dom'
+import {connect} from 'react-redux';
+function Landing({isAuthenticated}) {
+    if(isAuthenticated)
+    {
+      return <Redirect to='/dashboard'/>
+    }
     return (
         <div class="landingg">
         <div class="dark-overlay">
@@ -18,4 +23,7 @@ function Landing() {
       </div>
     )
 }
-export default Landing;
+const mapStateToProps =state=>({
+  isAuthenticated:state.auth.isAuthenticated
+})
+export default connect(mapStateToProps)(Landing);
