@@ -12,11 +12,11 @@ const CreateProfile = ({createProfile,history}) => {
         skills:'',
         githubusername:'',
         bio:'',
-        twitter:'',
-        facebook:'',
-        linkedin:'',
-        youtube:'',
-        instagram:''
+        twitter:" ",
+        facebook:" ",
+        linkedin:" ",
+        youtube:" ",
+        instagram:" "
     });
     const [displaysocialInputs,toggleSocialInputs]=useState(false);
     const{
@@ -37,6 +37,7 @@ const CreateProfile = ({createProfile,history}) => {
      
     const onsubmit=e=>{
         e.preventDefault();
+        console.log(formData)
         createProfile(formData,history)
     }
     return (

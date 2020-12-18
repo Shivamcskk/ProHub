@@ -70,7 +70,7 @@ import PropTypes from 'prop-types'
       </form>
       <p className="my-1" style={{textAlign:"center"}}>
         Already have an account? <Link  style={{color:"red"}}
-        href="/login">Sign In</Link>
+        to="/login">Sign In</Link>
       </p>
     
             </Fragment>

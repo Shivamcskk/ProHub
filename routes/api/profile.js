@@ -3,6 +3,7 @@ const router =express.Router();
 const auth=require('../../middleware/auth')
 const Profile=require('../../models/Profile');
 const User=require('../../models/User');
+const Post=require('../../models/Post');
 const {check,validationResult}=require('express-validator')
 const request=require('request');
 const config=require('config');
@@ -64,8 +65,8 @@ async(req,res)=>{
             if(profile)
             {
                 profile=await Profile.findOneAndUpdate({user:req.user.id},
-          {$set:ProfileFields},
-          {new:true});
+                {$set:ProfileFields},
+                {new:true});
                 return res.json(profile);
             } 
             //create
@@ -111,7 +112,7 @@ router.get('/user/:user_id',async(req,res)=>{
 router.delete('/',auth,async(req,res)=>{
     try {
         await Profile.findOneAndRemove({user:req.user.id});
-
+        await Post.deleteMany({user:req.user.id});
         await User.findOneAndRemove({_id:req.user.id});
         res.json({msg:"user Deleted"});
     } catch (err) {

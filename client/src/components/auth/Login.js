@@ -53,7 +53,7 @@ import {login} from '../../actions/auth';
       </form>
       <p className="my-1" style={{textAlign:"center"}}>
         Dont have an account? <Link  style={{color:"red"}}
-        href="/register">log In</Link>
+        to="/register">Register</Link>
       </p>
     
             </Fragment>

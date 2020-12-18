@@ -1,11 +1,13 @@
 import React,{Fragment, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
-import {getCurrentProfile} from '../../actions/profile';
+import {deleteAccount, getCurrentProfile} from '../../actions/profile';
 import Spinner from '../layout/Spinner'
 import { Link } from 'react-router-dom';
 import DashboardAction from './DashboardAction'
-const Dashboard = ({getCurrentProfile,auth:{user},profile:{profile,loading}}) => {
+import Experience from './Experience';
+import Education from './Education';
+const Dashboard = ({getCurrentProfile,auth:{user},profile:{profile,loading},deleteAccount}) => {
     useEffect(
         ()=>{
             getCurrentProfile();
@@ -18,7 +20,17 @@ const Dashboard = ({getCurrentProfile,auth:{user},profile:{profile,loading}}) =>
             <p className="lead">
                 <i className="fas fa-user"></i>Welcome {user && user.name}
             </p>
-            {profile !==null ? <Fragment><DashboardAction/></Fragment> :<Fragment><p>No profile found,Please add details</p><Link to='/create-profile' className="btn btn-primary my-1">Create profile</Link></Fragment>}
+            {profile !==null ? <Fragment>
+                <DashboardAction/>
+                <Experience experience={profile.experience}/>
+                <Education education={profile.education}/>
+                <div className="my-2">
+                    <button className="btn btn-danger" onClick={()=>deleteAccount()}>
+                        <i className="fas fa-user-minus">Delete Account</i>
+                    </button>
+                </div>
+
+            </Fragment> :<Fragment><p>No profile found,Please add details</p><Link to='/create-profile' className="btn btn-primary my-1">Create profile</Link></Fragment>}
 
         </Fragment>
     )
@@ -34,5 +46,5 @@ const mapStateToProps=state=>({
     profile:state.profile
 })
 
-export default connect(mapStateToProps,{getCurrentProfile})(Dashboard);
+export default connect(mapStateToProps,{getCurrentProfile,deleteAccount})(Dashboard);
 

@@ -12,11 +12,11 @@ const EditProfile = ({profile:{profile,loading},createProfile,history,getCurrent
         skills:'',
         githubusername:'',
         bio:'',
-        twitter:'',
-        facebook:'',
-        linkedin:'',
-        youtube:'',
-        instagram:''
+        twitter:"a",
+        facebook:"a",
+        linkedin:"a",
+        youtube:" ",
+        instagram:" "
     });
     const [displaysocialInputs,toggleSocialInputs]=useState(false);
     useEffect(()=>{
@@ -59,7 +59,7 @@ const EditProfile = ({profile:{profile,loading},createProfile,history,getCurrent
     return (
         <Fragment> 
             <h1 className="large" style={{color:"black",textAlign:"center"}}>
-        Create Your Profile
+        Edit Your Profile
       </h1>
       <p className="lead" style={{width:"50%",margin:"0 auto"}}>
         <i className="fas fa-user"></i> Some Truth and some Myth and You are done
