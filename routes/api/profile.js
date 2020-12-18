@@ -32,12 +32,13 @@ async(req,res)=>{
             return res.status(400).json({errors:errors.array()})
         }
         const {
-            comapny,website,location,bio,status,githubusername,skills,youtube,facebook,twitter,instagram,linkedin
+            company,website,location,bio,status,githubusername,skills,youtube,facebook,twitter,instagram,linkedin
 
         }=req.body;
+        
         const ProfileFields={};
         ProfileFields.user=req.user.id;
-        if(comapny)ProfileFields.comapny=comapny;
+        if(company)ProfileFields.company=company;
         if(website)ProfileFields.website=website;
         if(location)ProfileFields.location=location;
         if(bio)ProfileFields.bio=bio;
@@ -45,6 +46,7 @@ async(req,res)=>{
         if(githubusername)ProfileFields.githubusername=githubusername;
         if(skills)
         {
+            
             ProfileFields.skills=skills.split(',').map(skill=>skill.trim());
         
         }
