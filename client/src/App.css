@@ -40,7 +40,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
 }
 
@@ -374,15 +374,16 @@ button {
 
 .profile-top {
   grid-area: top;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  max-height:60vh;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
 .profile-top img {
-  width: 250px;
+  width: 175px;
+  margin-top: -1%;
 }
 
 .profile-top .icons a {
