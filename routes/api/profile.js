@@ -27,6 +27,7 @@ router.get('/me',auth,async(req,res)=>{
 router.post('/',[auth,[check('status','Status is required').not().isEmpty(),
 check('skills',"Skills is required").not().isEmpty()]],
 async(req,res)=>{
+    console.log(req.body)
         const errors=validationResult(req);
         if(!errors.isEmpty())
         {
@@ -39,25 +40,37 @@ async(req,res)=>{
         
         const ProfileFields={};
         ProfileFields.user=req.user.id;
-        if(company)ProfileFields.company=company;
-        if(website)ProfileFields.website=website;
-        if(location)ProfileFields.location=location;
-        if(bio)ProfileFields.bio=bio;
-        if(status)ProfileFields.status=status;
-        if(githubusername)ProfileFields.githubusername=githubusername;
+        if(company)ProfileFields.company=company
+        else ProfileFields.company='';
+        if(website)ProfileFields.website=website
+        else ProfileFields.website='';
+        if(location)ProfileFields.location=location
+        else ProfileFields.location='';
+        if(bio)ProfileFields.bio=bio
+        else ProfileFields.bio='';
+        if(status)ProfileFields.status=status
+        else ProfileFields.status='';
+        if(githubusername)ProfileFields.githubusername=githubusername
+        else ProfileFields.githubusername='';
         if(skills)
         {
             
             ProfileFields.skills=skills.split(',').map(skill=>skill.trim());
         
         }
+        else ProfileFields.skills='';
 
         ProfileFields.social={};
-        if(youtube)ProfileFields.social.youtube=youtube;
-        if(twitter)ProfileFields.social.twitter=twitter;
-        if(facebook)ProfileFields.social.facebook=facebook;
-        if(linkedin)ProfileFields.social.linkedin=linkedin;
-        if(instagram)ProfileFields.social.instagram=instagram;
+        if(youtube)ProfileFields.social.youtube=youtube
+        else ProfileFields.social.youtube='';
+        if(twitter)ProfileFields.social.twitter=twitter
+        else ProfileFields.social.twitter='';
+        if(facebook)ProfileFields.social.facebook=facebook
+        else ProfileFields.social.facebook='';
+        if(linkedin)ProfileFields.social.linkedin=linkedin
+        else ProfileFields.social.linkedin='';
+        if(instagram)ProfileFields.social.instagram=instagram
+        else ProfileFields.social.instagram='';
         
         try{
             let profile=await Profile.findOne({user:req.user.id});

@@ -13,14 +13,16 @@ const Profiles = ({getProfiles,profile:{profiles,loading}}) => {
         <Fragment>
             {
                 loading ? <Spinner/> :<Fragment>
-                    <h1 className="large text-primary">Users of ProHub</h1>
-                    <p className="lead">
-                        <i className="fas fa-user-circle"></i>Browse And connect
+                    <h1 className="large text-success" style={{textAlign:"center",fontWeight:"lighter"}}>Prohub Profiles</h1>
+                    <p style={{ textAlign:"center",fontWeight:"lighter",color:"#808080",marginTop:"-2%"}}>
+                    <small className="lead" >
+                    Browse and connect
+                    </small>
                     </p>
                     <div className="profiles">
                         {
                             profiles.length >0 ?(
-                                profiles.map(profile =>(<ProfileItem key={profile._id} profile={profile}/>))):
+                                profiles.map(profile =>(<ProfileItem  key={profile._id} profile={profile}/>))):
                                     <h4>No Users Found...</h4>
                             
                         }

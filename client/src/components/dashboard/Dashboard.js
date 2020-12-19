@@ -16,9 +16,9 @@ const Dashboard = ({getCurrentProfile,auth:{user},profile:{profile,loading},dele
 
     return (
         loading && profile===null ? <Spinner/> :<Fragment>
-            <h1 className="large text-success">Dashboard</h1>
+            <h1 className="large text-success" style={{fontWeight:"lighter"}}>Dashboard</h1>
             <p className="lead">
-                <i className="fas fa-user"></i>Welcome {user && user.name}
+                <i className="fas fa-user"></i><span >Welcome,</span> <span style={{color:"#1a4654"}}>{user && user.name}</span>
             </p>
             {profile !==null ? <Fragment>
                 <DashboardAction/>

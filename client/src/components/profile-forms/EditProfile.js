@@ -12,11 +12,11 @@ const EditProfile = ({profile:{profile,loading},createProfile,history,getCurrent
         skills:'',
         githubusername:'',
         bio:'',
-        twitter:"a",
-        facebook:"a",
-        linkedin:"a",
-        youtube:" ",
-        instagram:" "
+        twitter:'',
+        facebook:'',
+        linkedin:'',
+        youtube:'',
+        instagram:''
     });
     const [displaysocialInputs,toggleSocialInputs]=useState(false);
     useEffect(()=>{
