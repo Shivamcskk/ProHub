@@ -409,6 +409,7 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  width: 100%;
 }
 
 .profile-edu {

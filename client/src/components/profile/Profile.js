@@ -8,6 +8,7 @@ import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import ProfileGithub from './ProfileGithub';
 const Profile = ({match,getProfilesById,profile:{profile,loading},auth}) => {
     
     useEffect(()=>{
@@ -38,8 +39,6 @@ const Profile = ({match,getProfilesById,profile:{profile,loading},auth}) => {
                         )
                     }
                     </div>
-                </div>
-               
                     <div class="profile-edu bg-white p-2">
                     <h2 class="text-primary">Education</h2>
                     {profile.education.length>0 ?(
@@ -54,6 +53,12 @@ const Profile = ({match,getProfilesById,profile:{profile,loading},auth}) => {
                     }
                    
                 </div>
+                {profile.githubusername &&(
+                    <ProfileGithub username={profile.githubusername}/>
+                )}
+                </div>
+               
+                 
                 </Fragment>}
         </Fragment>
     )
