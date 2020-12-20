@@ -17,6 +17,9 @@ function Landing({isAuthenticated}) {
             <div class="buttons">
             <Link to='/register'className="btn btn-success">Register</Link>
               <Link to='/login'className="btn btn-light">Login</Link>
+              <p class="lead" style={{marginTop:"20%"}}>
+              Not optimized For Mobile Device Kindly use Laptop Or Tablet!
+            </p>
             </div>
           </div>
       </div>
