@@ -335,7 +335,7 @@ button {
 .landingg {
   position: relative;
   background: url('./img/showcase.png') no-repeat center center/cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .landing-inner {

@@ -5,7 +5,7 @@ const ProfileItem = (props) => {
    
     return (
         <div className="profile bg-light" style={{minHeight:"35vh",marginLeft:"auto",marginRight:"auto"}}>
-           <img className="round-img" style={{width:"80%",marginBottom:"10%",marginTop:"-8%"}} src={props.profile.user.avatar} alt=""/>
+           <img className="round-img" style={{width:"80%",marginBottom:"10%"}} src={props.profile.user.avatar} alt=""/>
            <div style={{marginTop:"-12%"}}>
                <h2 style={{marginTop:"-2%"}}>{props.profile.user.name}</h2>
                <p>{props.profile.status} {props.profile.company && <span> at {props.profile.company}</span>}</p>
