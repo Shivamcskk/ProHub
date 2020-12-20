@@ -12,11 +12,11 @@ const CreateProfile = ({createProfile,history}) => {
         skills:'',
         githubusername:'',
         bio:'',
-        twitter:" ",
-        facebook:" ",
-        linkedin:" ",
-        youtube:" ",
-        instagram:" "
+        twitter:'',
+        facebook:'',
+        linkedin:'',
+        youtube:'',
+        instagram:''
     });
     const [displaysocialInputs,toggleSocialInputs]=useState(false);
     const{

@@ -1,18 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
- const DashboardAction = () => {
+ const DashboardAction = ({id}) => {
     return (
         <div>
              <div className="dash-buttons">
         <Link to="/edit-profile" className="btn btn-light"
           ><i className="fas fa-user-circle text-primary"></i> Edit Profile</Link>
+
+       
         
         <Link to="/add-experience" className="btn btn-light"
           ><i className="fab fa-black-tie text-primary"></i> Add Experience</Link>
         
         <Link to="/add-education" className="btn btn-light"
           ><i className="fas fa-graduation-cap text-primary"></i> Add Education</Link>
+
+             <Link to={`/profile/${id}`} style={{backgroundColor:"black",color:"white"}} className="btn btn-light"
+          >See Your Profile</Link>
         
       </div>
             

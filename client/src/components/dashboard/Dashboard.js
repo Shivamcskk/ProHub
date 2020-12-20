@@ -21,7 +21,8 @@ const Dashboard = ({getCurrentProfile,auth:{user},profile:{profile,loading},dele
                 <i className="fas fa-user"></i><span >Welcome,</span> <span style={{color:"#1a4654"}}>{user && user.name}</span>
             </p>
             {profile !==null ? <Fragment>
-                <DashboardAction/>
+                <DashboardAction id={user._id}/>
+                
                 <Experience experience={profile.experience}/>
                 <Education education={profile.education}/>
                 <div className="my-2">
