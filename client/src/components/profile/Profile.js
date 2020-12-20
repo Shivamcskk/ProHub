@@ -23,7 +23,7 @@ const Profile = ({match,getProfilesById,profile:{profile,loading},auth}) => {
                 {auth.isAuthenticated && auth.loading===false && auth.user._id===profile.user._id && (
                     <Link to='/edit-profile' className='btn btn-dark' style={{color:"black"}}>Edit Profile</Link>
                 )}
-                <div className="profile-grid my-1" >
+                <div className="profile-grid my-1"  >
                     <ProfileTop profile={profile}/>
                     <ProfileAbout profile={profile}/>
                     <div class="profile-exp bg-white p-2">

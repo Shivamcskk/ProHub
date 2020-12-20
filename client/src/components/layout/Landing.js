@@ -7,7 +7,7 @@ function Landing({isAuthenticated}) {
       return <Redirect to='/dashboard'/>
     }
     return (
-        <div class="landingg">
+        <div class="landing">
         <div class="dark-overlay">
           <div class="landing-inner">
           
