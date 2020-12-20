@@ -1,0 +1,9 @@
+{
+    "jwtsecret":"mysecrettoken69",
+      "mongoURI":"mongodb+srv://SCOTT:India1947@cluster0.dizvw.mongodb.net/<dbname>?retryWrites=true&w=majority",
+      "githubClientId":"24600ca8c1f2520f1b78",
+      "githubSecret":"69742981cadfe83719662191329c3f2e7a3f7760"
+  }
+  
+  
+  
