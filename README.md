@@ -1,5 +1,5 @@
 # ProHub
-I have made a website which is beginner level of LinkedIn
+I have made a website which is beginner level clone of LinkedIn
 
 
 I have built this as a learning project. These were my learnings :
